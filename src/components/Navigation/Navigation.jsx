@@ -1,5 +1,6 @@
 import logo from '../..//assets/assets/images/logo.svg';
 import cart from '../..//assets/assets/images/icon-svg/cart-1.svg'
+import { Link } from 'react-router-dom';
 const Navigation = () => {
     return (
         <div className="navigation">
@@ -10,7 +11,9 @@ const Navigation = () => {
                             <div className="navbar-top d-flex justify-content-between">
                                 <div className="navbar-top-left">
                                     <ul className="navbar-top-link">
-                                        <li><a href="#0">About</a></li>
+                                        <li> <Link to="/">Home</Link></li>
+                                        <li> <Link to="/about">About</Link></li>
+                                        <li> <Link to="/product">Product</Link></li>
                                         <li><a href="#0">Help</a></li>
                                         <li><a href="#0">Contact</a></li>
                                         <li className="d-none d-md-block">

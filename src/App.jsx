@@ -1,22 +1,38 @@
 import './App.css';
-import Header from './components/Header/Header';
-import ContentCard from './components/ContentCard/ContentCard';
-import FeaturedItem from './components/FeaturedItem/FeaturedItem';
-import Navigation from './components/Navigation/Navigation';
 import Product from './components/Product/Product';
-import ClientLogoSection from './components/ClientLogoSection/ClientLogoSection';
-import Footer from './components/Footer/Footer';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Main from './components/Main/Main';
+import Home from './components/Home/Home';
+import About from './components/About/About/About';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path: "/product",
+        element: <Product></Product>
+      }
+    ]
+  },
+]);
 function App() {
 
   return (
     <>
-      <Navigation></Navigation>
-      <Header></Header>
-      <ContentCard></ContentCard>
-      <Product></Product>
-      <FeaturedItem></FeaturedItem>
-      <ClientLogoSection></ClientLogoSection>
-      <Footer></Footer>
+      <RouterProvider router={router} />
     </>
   );
 }
