@@ -220,8 +220,9 @@ const Navigation = () => {
                                             >Pages <i className="mdi mdi-chevron-right"></i
                                             ></a>
                                             <ul className="sub-menu collapse" id="menuVertical7-5">
-                                                <li><a href="about-page.html">About Page</a></li>
-                                                <li><a href="account-page.html">Account Page</a></li>
+                                                <li><Link to="/about">About Page</Link></li>
+                                                <li><Link to="/account">Account Page</Link></li>
+                                                <li><Link to="/cart">Cart Page</Link></li>
                                                 <li><a href="cart-page.html">Cart Page</a></li>
                                                 <li><a href="category.html">Category Page</a></li>
                                                 <li><a href="checkout-page.html">Checkout Page</a></li>

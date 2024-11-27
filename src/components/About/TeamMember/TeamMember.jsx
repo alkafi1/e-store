@@ -1,3 +1,5 @@
+import TeamMemberCard from "./TeamMemberCard";
+
 const teamMembers = [
     {
         img: 'assets/images/team/team-1.jpg',
@@ -46,40 +48,15 @@ const TeamMember = () => {
                 </div>
                 <div className="row">
                     {teamMembers.map((member, index) => (
+
                         <div className="col-lg-4 col-md-6" key={index}>
-                            <div className="single-team-wrapper mb-30">
-                                <div className="team-img">
-                                    <img src={member.img} alt={member.name} />
-                                </div>
-                                <div className="team-content">
-                                    <div className="team-info">
-                                        <h5 className="heading-5 font-weight-500 mb-10">{member.name}</h5>
-                                        <p>{member.position}</p>
-                                    </div>
-                                    <ul className="team-social">
-                                        <li>
-                                            <a href="#" className="icon-btn primary-icon">
-                                                <i className="lni lni-facebook-filled"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="icon-btn primary-icon">
-                                                <i className="lni lni-twitter-filled"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="icon-btn primary-icon">
-                                                <i className="lni lni-instagram-filled"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <TeamMemberCard member={member}></TeamMemberCard>
+
                         </div>
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
 
     );
 };
