@@ -1,0 +1,44 @@
+/* Ensure the arrows are displayed correctly */
+.slick-prev, .slick-next {
+    font-size: 30px; /* Adjust arrow size */
+    color: #fff; /* Set arrow color */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 50%; /* Round arrow buttons */
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+  }
+  
+  .slick-prev {
+    left: 10px; /* Position the left arrow */
+  }
+  
+  .slick-next {
+    right: 10px; /* Position the right arrow */
+  }
+  
+  /* Optional: Hover effect for arrows */
+  .slick-prev:hover, .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
+  }
+  
+  /* Ensure arrows appear above slider content */
+  .slick-prev, .slick-next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+  }
+  
+  .slick-prev {
+    left: 15px; /* Position the left arrow */
+  }
+  
+  .slick-next {
+    right: 15px; /* Position the right arrow */
+  }
+  
