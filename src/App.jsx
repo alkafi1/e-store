@@ -22,6 +22,7 @@ import './assets/assets/css/jquery-ui.min.css';
 import './assets/assets/css/nice-select.css';
 import './assets/assets/css/default.css';
 import './assets/assets/css/style.css';
+import ViewCheckOut from './components/CheckOut/ViewCheckOut/ViewCheckOut';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop></Shop>
+      },
+      {
+        path: "/checkout",
+        element: <ViewCheckOut></ViewCheckOut>
       },
       {
         path: "/Login",

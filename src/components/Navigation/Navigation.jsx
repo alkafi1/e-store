@@ -290,8 +290,8 @@ const Navigation = () => {
                                                 <li><Link to="/about">About Page</Link></li>
                                                 <li><Link to="/account">Account Page</Link></li>
                                                 <li><Link to="/cart">Cart Page</Link></li>
+                                                <li><Link to="/checkout">Checkout Page</Link></li>
                                                 <li><a href="category.html">Category Page</a></li>
-                                                <li><a href="checkout-page.html">Checkout Page</a></li>
                                                 <li><a href="contact-page.html">Contact Page</a></li>
                                                 <li><a href="login-page.html">Log In Page</a></li>
                                                 <li>

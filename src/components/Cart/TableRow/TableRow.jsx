@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ProductSlider from "../../Product/ProductSlider";
 
 const TableRow = ({ product }) => {
     const { id, name, price, images, rating } = product;
