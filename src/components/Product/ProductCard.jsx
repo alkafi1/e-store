@@ -4,9 +4,10 @@ import ProductSlider from './ProductSlider';
 const ProductCard = ({ id, name, reference, price, images, rating, isSale, isOutOfStock }) => {
   const [loadedImages, setLoadedImages] = useState([]);
 
+
   // Function to dynamically import images
   const loadImage = (imageName) => {
-    return `/assets/images/product-4/${imageName}`;
+    return `/src/assets/assets/images/product-1/${imageName}`;
   };
 
   // Load all images once the component mounts
