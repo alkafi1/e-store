@@ -33,7 +33,6 @@ const ShopFilter = () => {
         setSelectedColors([]);
     };
     return (
-        <div>
             <div className="col-lg-4">
                 {/* Filter Panel */}
                 <div className="filter-style-1 mt-0">
@@ -223,7 +222,6 @@ const ShopFilter = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

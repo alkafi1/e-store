@@ -14,7 +14,14 @@ import ViewAccountPage from './components/AccountPage/ViewAccountPage/ViewAccoun
 import ViewCart from './components/Cart/ViewCart/ViewCart';
 import Login from './components/Login/Login';
 import Shop from './components/Shop/Shop/Shop';
-
+import './assets/assets/css/bootstrap.min.css';
+import './assets/assets/css/slick.css';
+import './assets/assets/css/LineIcons.css';
+import './assets/assets/css/materialdesignicons.min.css';
+import './assets/assets/css/jquery-ui.min.css';
+import './assets/assets/css/nice-select.css';
+import './assets/assets/css/default.css';
+import './assets/assets/css/style.css';
 const router = createBrowserRouter([
   {
     path: "/",
