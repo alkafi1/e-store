@@ -28,7 +28,7 @@ const teamMembers = [
     },
     {
         img: 'assets/images/team/team-1.jpg',
-        name: 'David Smith',
+        // name: 'David Smith',
         position: 'CEO of Company',
     },
 ];

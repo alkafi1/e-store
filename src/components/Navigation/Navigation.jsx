@@ -1,7 +1,16 @@
 import logo from '../..//assets/assets/images/logo.svg';
 import cart from '../..//assets/assets/images/icon-svg/cart-1.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 const Navigation = () => {
+
+
+    const [showMenu, setShowMenu] = useState(false);
+
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    };
+
     return (
         <div className="navigation">
             <header className="menu-style-7 position-relative">
@@ -12,10 +21,9 @@ const Navigation = () => {
                                 <div className="navbar-top-left">
                                     <ul className="navbar-top-link">
                                         <li> <Link to="/">Home</Link></li>
+                                        <li> <Link to="/shop">Shop</Link></li>
                                         <li> <Link to="/about">About</Link></li>
                                         <li> <Link to="/product">Product</Link></li>
-                                        <li><a href="#0">Help</a></li>
-                                        <li><a href="#0">Contact</a></li>
                                         <li className="d-none d-md-block">
                                             <a href="#0"
                                             ><i className="mdi mdi-phone-in-talk"></i> +8801234567890</a
@@ -47,8 +55,67 @@ const Navigation = () => {
                                             </select>
                                         </li>
                                         <li>
-                                            <a href="#0"><i className="mdi mdi-account"></i>Login</a>
+                                            {/* <select value={selectedOption} onChange={handleChange}>
+
+                                                <option value="/login">Login</option>
+                                                <option value="/signup">Signup</option> */}
+                                            {/* <option value="0" selected>English</option>
+                                                <option value="1">Español</option>
+                                                <option value="0" selected>
+                                                    <Link to="/login">
+                                                        <i className="mdi mdi-account"></i> Login
+                                                    </Link>
+                                                </option> */}
+                                            {/* </select> */}
+                                            {/* <Link to="/login">
+                                                <i className="mdi mdi-account"></i> Login
+                                            </Link> */}
+
+                                            {/* <select>
+                                                <option ></option>
+                                            </select>
+                                            <Link to="/login">
+                                                <i className="mdi mdi-account"></i> Login
+                                            </Link> */}
                                         </li>
+                                        {/* <li>
+                                            <div className="dropdown">
+                                                <button onClick={toggleDropdown} className="dropdown-toggle">
+                                                    Auth
+                                                </button>
+                                                {isOpen && (
+                                                    <div className="dropdown-menu">
+                                                        <Link to="/login" className="dropdown-item" onClick={() => setIsOpen(false)}>
+                                                            Login
+                                                        </Link>
+                                                        <Link to="/signup" className="dropdown-item" onClick={() => setIsOpen(false)}>
+                                                            Signup
+                                                        </Link>
+                                                        <Link to="/profile" className="dropdown-item" onClick={() => setIsOpen(false)}>
+                                                            Profile
+                                                        </Link>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </li> */}
+                                        <div className="dropdown">
+                                            <button className="dropdown-toggle" onClick={toggleMenu}>
+                                                Menu
+                                            </button>
+                                            {showMenu && (
+                                                <div className="dropdown-menu">
+                                                    <Link to="/home" className="dropdown-item" onClick={toggleMenu}>
+                                                        Home
+                                                    </Link>
+                                                    <Link to="/about" className="dropdown-item" onClick={toggleMenu}>
+                                                        About
+                                                    </Link>
+                                                    <Link to="/contact" className="dropdown-item" onClick={toggleMenu}>
+                                                        Contact
+                                                    </Link>
+                                                </div>
+                                            )}
+                                        </div>
                                     </ul>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TeamMemberCard = ({ member }) => {
-    const { name, position, img } = member;
+const TeamMemberCard = (props) => {
+    const { name, position, img } = props.member;
     return (
         <div className="single-team-wrapper mb-30">
             <div className="team-img">

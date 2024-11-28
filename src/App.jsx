@@ -9,6 +9,8 @@ import Home from './components/Home/Home';
 import About from './components/About/About/About';
 import ViewAccountPage from './components/AccountPage/ViewAccountPage/ViewAccountPage';
 import ViewCart from './components/Cart/ViewCart/ViewCart';
+import Login from './components/Login/Login';
+import Shop from './components/Shop/Shop/Shop';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <ViewCart></ViewCart>
+      },
+      {
+        path: "/shop",
+        element: <Shop></Shop>
+      },
+      {
+        path: "/Login",
+        element: <Login></Login>
       },
       {
         path: "/product",

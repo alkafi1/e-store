@@ -1,3 +1,4 @@
+import FeatureSectionCard from "./FeatureSectionCard";
 
 
 const FeaturesSection = () => {
@@ -20,19 +21,12 @@ const FeaturesSection = () => {
                     </div>
                 </div>
                 <div className="row">
-                    {features.map((feature, index) => (
-                        <div className="col-lg-4 col-md-6" key={index}>
-                            <div className="single-feature-wrapper">
-                                <div className="feature-icon">
-                                    <i className={`lni ${feature.icon}`}></i>
-                                </div>
-                                <div className="feature-content">
-                                    <h5 className="heading-5 font-weight-500 mb-10">{feature.title}</h5>
-                                    <p>{feature.description}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                    {features.map((feature, index) =>
+                        <FeatureSectionCard
+                            key={index}
+                            feature={feature}
+                        ></FeatureSectionCard>
+                    )}
                 </div>
             </div>
         </section>
