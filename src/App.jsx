@@ -1,3 +1,6 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import Product from './components/Product/Product';
 import {
