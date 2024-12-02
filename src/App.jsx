@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import Product from './components/Product/Product';
@@ -23,6 +23,7 @@ import './assets/assets/css/nice-select.css';
 import './assets/assets/css/default.css';
 import './assets/assets/css/style.css';
 import ViewCheckOut from './components/CheckOut/ViewCheckOut/ViewCheckOut';
+
 const router = createBrowserRouter([
   {
     path: "/",
