@@ -1,30 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import ProductSlider from './ProductSlider';
 
-const ProductCard = ({ id, name, reference, price, images, rating, isSale, isOutOfStock }) => {
+const ProductCard = ({ product, }) => {
+  console.log(product);
   const [loadedImages, setLoadedImages] = useState([]);
-
-
-  // Function to dynamically import images
-  const loadImage = (imageName) => {
-    return `/src/assets/assets/images/product-1/${imageName}`;
-  };
-
-  // Load all images once the component mounts
+  // const baseURL = "https://estore.itsrupam.xyz/public";
+  const baseURL = "http://localhost/e-store-admin/public";
   useEffect(() => {
-    const fetchImages = async () => {
-      const imagesPaths = await Promise.all(images.map(image => loadImage(image)));
-      setLoadedImages(imagesPaths);
-    };
-    fetchImages();
-  }, [images]);
+    // Map the image paths into an array of URLs or paths to be used
+    if (product.images && Array.isArray(product.images)) {
+      const imagePaths = product.images.map((image) => ({
+        src: `${baseURL}/${image.path}`,
+        alt: image.name,
+      }));
+      setLoadedImages(imagePaths);
+    }
+  }, [product.images]);
+  console.log(loadedImages);
+
 
   return (
     <div className="product-style-7 mt-30">
       <div className="product-image">
-        {isSale && <span className="icon-text text-style-1">20% off</span>}
-        {isOutOfStock && <span className="icon-text text-style-1">Out Of Stock</span>}
-        <ProductSlider loadedImages={loadedImages} name={name} />
+        {/* <span className="icon-text text-style-1">20% off</span> */}
+        {product.discount_option === 1 && product.discount_type != null && (
+          <span className="icon-text text-style-1">
+            {product.discount_amount} {product.discount_type === 'fixed' ? 'off' : '%'}
+          </span>
+        )}
+        {/* <span className="icon-text text-style-1">Out Of Stock</span> */}
+        <ProductSlider loadedImages={loadedImages} />
       </div>
       <div className="product-content">
         <ul className="product-meta">
@@ -35,14 +40,24 @@ const ProductCard = ({ id, name, reference, price, images, rating, isSale, isOut
             </a>
           </li>
           <li>
-            <span><i className="mdi mdi-star"></i> {rating}</span>
+            <span><i className="mdi mdi-star"></i> 5</span>
           </li>
         </ul>
         <h4 className="title">
-          <a href={`product-details-page.html?id=${id}`}>{name}</a>
+          <a href={`product-details-page.html?id=${product.id}`}>{product.name}</a>
         </h4>
-        <p>Reference {reference}</p>
-        <span className="price">{price}</span>
+        <p>{product.category['category_name']}-{product.subcategory['subcategory_name']}</p>
+        <div className="flex items-center space-x-4">
+          {/* {product.discount_option === 1 && product.discount_type != null && (
+            <span className=" text-gray-500 line-through">
+              {product.price}
+            </span>
+          )} */}
+          <span className=" price text-xl font-bold text-black">
+            {product.discount_option === 1 ? product.after_discount_price : product.price}
+          </span>
+        </div>
+
         <a href="javascript:void(0)" className="main-btn primary-btn">
           <img src="/assets/images/icon-svg/cart-4.svg" alt="" />
           Add to Cart

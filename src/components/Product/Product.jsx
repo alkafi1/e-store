@@ -67,10 +67,9 @@ import ProductCard from './ProductCard'; // Import ProductCard
 
 const Product = () => {
   const [products, setProducts] = useState([]);
-  console.log(products);
-
+  // http://localhost/e-store-admin/
   useEffect(() => {
-    fetch('https://estore.itsrupam.xyz/api/product/recent', {
+    fetch('http://localhost/e-store-admin/api/product/recent', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -84,7 +83,7 @@ const Product = () => {
         return res.json();
       })
       .then((data) => {
-        setProducts(data); // Assuming the API response is an array of products
+        setProducts(data.data); // Assuming the API response is an array of products
       })
       .catch((error) => {
         console.error('Error fetching recent products:', error);
@@ -105,7 +104,7 @@ const Product = () => {
           {/* Map over each product and pass data to ProductCard */}
           {products.map((product) => (
             <div className="col-lg-6" key={product.id}>
-              <ProductCard {...product} />
+              <ProductCard product={product} />
             </div>
           ))}
         </div>
